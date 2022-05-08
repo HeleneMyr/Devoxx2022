@@ -1,0 +1,10 @@
+<div aria-hidden="true" class="section" #section>
+    <svg height="100%" width="4" focusable="false" class="mat-progress-bar-background mat-progress-bar-buffer" *ngIf="show">
+      <defs>
+        <pattern [id]="progressbarId" x="0" y="4" width="4" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="2"/>
+        </pattern>
+      </defs>
+      <rect class="mat-progress-bar-fill" width="100%" [attr.height]="bufferValue + '%'"/>
+    </svg>
+  </div>

@@ -1,0 +1,28 @@
+<div class="d-inline subsection">
+    <div class="subsection-content row">
+        <div class="col-4-percent position-relative">
+            <app-progress-bar-vertical 
+                [show]="showProgressBar" 
+                (activeProgressBar)="onChangeFlagActiveProgressBar()"
+                height="100%">
+            </app-progress-bar-vertical>
+        </div>
+        <div class="col-11">
+            <h2 *ngIf="existsTitleSubsection()">{{ item.titleSubsection }}</h2>
+            <div *ngFor="let p of item.textParagraph">
+                <ul *ngIf="isList(p)">
+                    <li *ngFor="let l of list(p)">{{ l }}</li>
+                </ul>
+                <h3 *ngIf="isTitle(p)">{{ p | slice : 3 }}</h3>
+                <p *ngIf="isText(p)">{{ p }}</p>
+                <br *ngIf="isBr(p)"/>
+            </div> 
+            <div class="div-img-subsection">
+                <img *ngIf="existsImg()"
+                    [attr.src]="item.srcImg"
+                    [attr.alt]="item.altImg"
+                    class="subsection-img">
+            </div>
+        </div>
+    </div>
+</div>

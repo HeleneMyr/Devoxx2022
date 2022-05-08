@@ -1,0 +1,25 @@
+#tm-sidebar {
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	padding-left: 40px;
+	padding-top: 40px;
+	width: 220px;
+}
+
+.tm-nav {
+	display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.navbar-toggler { display: none; }
+
+
+#tm-main-nav {
+	padding: 0;
+	margin: 0;
+}

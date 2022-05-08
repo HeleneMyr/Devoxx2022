@@ -1,0 +1,7 @@
+<li class="nav-item" (click)="onClick()">                                
+    <a [attr.href]="'#' + idNavBar" [ngClass]="{'nav-link': true, 'current': active}">
+        <div class="triangle-right"></div>
+        <fa-icon [icon]="faIcon" class="nav-icon"></fa-icon>
+        {{ textNav }}
+    </a>
+</li>

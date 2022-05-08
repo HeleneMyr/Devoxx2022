@@ -1,0 +1,13 @@
+<div id="tm-sidebar" class="tm-sidebar"> 
+    <nav class="tm-nav">
+        <app-nav-bar-header></app-nav-bar-header>             
+        <ul id="tm-main-nav">
+            <app-nav-bar-item *ngFor="let item of items$ | async; trackBy: identify" 
+                [textNav]="item.textNav"
+                [faIcon]="item.faIcon"
+                [active]="item.active"
+                [idNavBar]="item.idNavBar">
+            </app-nav-bar-item>
+        </ul>
+    </nav>
+</div>

@@ -1,0 +1,7 @@
+<div class="section-complete" [attr.id]="section.idSection">
+    <h1 class="tm-text-primary">{{ section.menu }}</h1>
+    <hr class="mb-5">
+    <app-subsection [menu]="section.menu" [showProgressBar]="section.showProgressBar" 
+        *ngFor="let item of section.subsections" [item]="item">
+    </app-subsection>
+</div>
