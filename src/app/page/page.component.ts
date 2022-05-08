@@ -45,7 +45,7 @@ export class PageComponent implements OnInit {
         'Tout d\'abord commençons par introduire Devoxx. Mais qu\'est-ce que c\'est ? C\'est un ensemble de conférences dédiées aux développeurs, avec en supplément, des stands et des activités. Cet événement dure trois jours à Paris.',
         'Je vous laisse découvrir mes deux jours d\'expériences au sein de cet événement annuel.'],
         'Devoxx',
-        '/assets/devoxx.jpg'
+        'assets/devoxx.jpg'
       )
     ]);
     this.sections.push(sectionDevoxx);
@@ -58,7 +58,7 @@ export class PageComponent implements OnInit {
         Il me faut encore récupérer mon badge et je vais au stand Capgemini. \
         Rendez-vous au 2e étage, stand n°18'],
         'Palais des congrés',
-        '/assets/palaiscongres.jpeg'
+        'assets/palaiscongres.jpeg'
       ),
       new Subsection(
         'Arrivée au stand Capgemini', 
@@ -67,7 +67,7 @@ export class PageComponent implements OnInit {
         'Arrivée là bas, on me montre alors le fichier utilisé pour aller dans les différentes conférences. \
         Il faut toujours qu\'il y ait une personne au niveau du stand, et nous avons que 4 badges pour aller voir les conférences.'],
         'Stand Capgemini',
-        '/assets/stand-capgemini.jpg'
+        'assets/stand-capgemini.jpg'
       ),
       new Subsection(
         'Visite des stands', 
@@ -100,7 +100,7 @@ export class PageComponent implements OnInit {
         'Heure du repas', 
         ['L\'heure du repas a alors sonné, on va alors chercher un sandwich au stand prévu.'],
         'Repas',
-        '/assets/repas.jpg'
+        'assets/repas.jpg'
       ),
       new Subsection(
         'Conférence "Traiter 1 million de messages par CPU par Go de mémoire avec Quarkus et Microprofile reactive messaging kafka à Décathlon"',
@@ -154,7 +154,7 @@ export class PageComponent implements OnInit {
         au niveau des traitements, il faut bien s\'assurer que les clients acceptent ces données.'
       ],
         'Traiter 1 million de messages par CPU par Go de mémoire avec Quarkus et Microprofile reactive messaging kafka à Décathlon',
-        '/assets/decathlon.jpg'
+        'assets/decathlon.jpg'
       ),
       new Subsection(
         'Retour au stand Capgemini',
@@ -222,7 +222,7 @@ export class PageComponent implements OnInit {
         Par contre, l\'utilisation de Gerrit est un peu problèmatique au vu de la communauté qui reste assez mineure.'
         ],
         'Continuous delivery on premise : Gerrit, Jenkins et Sonarqube entrent dans un bar...',
-        '/assets/continuousdelivery.jpg'
+        'assets/continuousdelivery.jpg'
       ),
       new Subsection(
         'Rencontre',
@@ -263,14 +263,14 @@ export class PageComponent implements OnInit {
         Il apporte beaucoup d\'avantages, mais, cela demande de connaitre un peu le CSS et cela est très verbeux dans le code HTML. '
         ],
         'Tailwind ou le futur du CSS',
-        '/assets/tailwind.jpg'
+        'assets/tailwind.jpg'
       ),
       new Subsection(
         'Go Paris',
         ['Après cette séance, j\'ai été ramené toutes mes affaires à l\'hôtel, et j\'en ai profité pour \
         faire un tour à la tour Eiffel ! Le palais des congrès n\'est pas si loin. '],
         'Paris',
-        '/assets/paris.jpg'
+        'assets/paris.jpg'
       ),
       new Subsection(
         'Soirée Devoxx 10 ans',
@@ -280,7 +280,7 @@ export class PageComponent implements OnInit {
         'Après cela, quelques uns d\'entre nous restent au bar en face du palais des congrés. \
         C\'est l\'occasion de nous retrouver entre Capgeminiens.'],
         'Equipe',
-        '/assets/equipe.jpg'
+        'assets/equipe.jpg'
       )
     ]);
     this.sections.push(sectionJeudi);
@@ -362,7 +362,7 @@ export class PageComponent implements OnInit {
         'La conférence est très intéressante et permet de nous mettre un point d\'attention sur les limites de la programmation reactive aujourd\'hui.'
         ],
         'Migrer de Spring MVC à Spring Web Flux',
-        '/assets/webflux.jpg'
+        'assets/webflux.jpg'
       ),
       new Subsection(
         'Conférence "Rendez vos interfaces fiables en faisant aimer les tests à votre équipe !"',
@@ -541,7 +541,7 @@ export class PageComponent implements OnInit {
         'Ce fût très enrichissant, aussi bien en participant aux conférences mais également avec les différents échanges que j\'ai pu avoir.',
         'Je conseille vraiment l\'expérience ! '],
         'Bye',
-        '/assets/laptop-wave.png'
+        'assets/laptop-wave.png'
       )
     ]);
     this.sections.push(sectionContact);
@@ -550,6 +550,10 @@ export class PageComponent implements OnInit {
 
   onScroll() {
     this._progressBarVertical.sendRequestCalculProgressBarVertical();
+  }
+
+  isBigScreen() {
+    return this.screenWidth > 840;
   }
 
 }
