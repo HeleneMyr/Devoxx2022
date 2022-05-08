@@ -1,6 +1,6 @@
 
 <mat-drawer-container class="page-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="screenWidth > 840">
+    <mat-drawer #drawer class="example-sidenav" [mode]="screenWidth > 840 ? 'over' : 'side'" [opened]="screenWidth > 840">
         <app-nav-bar></app-nav-bar>
     </mat-drawer>
     <mat-drawer-content id="right-zone" (scroll)="onScroll()">
