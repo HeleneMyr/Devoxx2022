@@ -1,0 +1,16 @@
+name: GitHub Actions Demo
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: ${{github.event.after}}
+      - name: Get Commit Message
+        run: echo "msg=$(git log --format=%B -n 1 ${{github.event.after}})" >> $GITHUB_ENV
+      - name: Echo commit message
+        if: ${{ startsWith(env.msg, 'LN') }}
+        run: echo "Commit ${{ env.msg }}"
