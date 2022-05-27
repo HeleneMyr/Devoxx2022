@@ -1,5 +1,5 @@
-name: GitHub Actions Demo
-on: [push]
+name: Check commit
+on: [pull_request]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -11,6 +11,30 @@ jobs:
           ref: ${{github.event.after}}
       - name: Get Commit Message
         run: echo "msg=$(git log --format=%B -n 1 ${{github.event.after}})" >> $GITHUB_ENV
+      - name : Print Title of PR
+        run: echo The Title of your PR is ${{ github.event.pull_request.title }}
       - name: Echo commit message
         if: ${{ startsWith(env.msg, 'LN') }}
         run: echo "Commit ${{ env.msg }}"
+      - name: Get PR Title
+        run: echo "prTitle=${{ github.event.pull_request.title }}" >> $GITHUB_ENV
+      - name: Contains LN 
+        if: ${{ contains(env.prTitle, 'LN') }}
+        run: echo "Commit ${{ github.event.pull_request.title }}"
+      - name: read file
+        run: | 
+            input=".github/workflows/values.json"
+            while IFS= read -r line
+            do
+              if [[ env.prTitle == "$line" ]];
+              then 
+                echo "$line"
+                echo "result=true" >> $GITHUB_ENV
+              fi
+            done < "$input"
+            echo "${{ env.result }}"
+      - name: List 
+        run: |
+            for x in element1 element2 element3; do
+               echo $x
+            done
